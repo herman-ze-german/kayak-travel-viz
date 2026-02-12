@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.DS_Store
+node_modules/
+# Private exports (keep out of git)
+data/

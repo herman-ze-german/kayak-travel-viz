@@ -1,0 +1,815 @@
+{
+  "sourceFiles": 0,
+  "segmentCount": 24,
+  "tripGroups": [
+    {
+      "tripGroupKey": "demo-01",
+      "tripName": "Demo Trip 1",
+      "year": 2024,
+      "start": "2024-01-01T00:00:00Z",
+      "end": "2024-01-09T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-01",
+          "tripName": "Demo Trip 1",
+          "tripKey": "demo-01:seg-1",
+          "title": "Taipei → Tokyo",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-01-01T06:00:00Z",
+          "end": "2024-01-01T14:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-01",
+          "tripName": "Demo Trip 1",
+          "tripKey": "demo-01:seg-2",
+          "title": "Tokyo → Berlin",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-01-01T16:00:00Z",
+          "end": "2024-01-01T20:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-01",
+          "tripName": "Demo Trip 1",
+          "tripKey": "demo-01:hotel",
+          "title": "Hotel in Berlin",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-01-02T00:00:00Z",
+          "end": "2024-01-08T00:00:00Z",
+          "segmentCount": 0
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-02",
+      "tripName": "Demo Trip 2",
+      "year": 2024,
+      "start": "2024-02-05T00:00:00Z",
+      "end": "2024-02-17T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-02",
+          "tripName": "Demo Trip 2",
+          "tripKey": "demo-02:seg-1",
+          "title": "Marrakesh → Berlin",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-02-05T06:00:00Z",
+          "end": "2024-02-05T11:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-02",
+          "tripName": "Demo Trip 2",
+          "tripKey": "demo-02:seg-2",
+          "title": "Berlin → Taipei",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-02-05T16:00:00Z",
+          "end": "2024-02-05T19:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-02",
+          "tripName": "Demo Trip 2",
+          "tripKey": "demo-02:hotel",
+          "title": "Hotel in Taipei",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-02-06T00:00:00Z",
+          "end": "2024-02-16T00:00:00Z",
+          "segmentCount": 0
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "year": 2024,
+      "start": "2024-03-11T00:00:00Z",
+      "end": "2024-03-15T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-03",
+          "tripName": "Demo Trip 3",
+          "tripKey": "demo-03:seg-1",
+          "title": "Taipei → Berlin",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-03-11T06:00:00Z",
+          "end": "2024-03-11T12:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-03",
+          "tripName": "Demo Trip 3",
+          "tripKey": "demo-03:seg-2",
+          "title": "Berlin → Reykjavík",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-03-11T16:00:00Z",
+          "end": "2024-03-11T18:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-03",
+          "tripName": "Demo Trip 3",
+          "tripKey": "demo-03:hotel",
+          "title": "Hotel in London",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-03-12T00:00:00Z",
+          "end": "2024-03-14T00:00:00Z",
+          "segmentCount": 0
+        },
+        {
+          "tripGroupKey": "demo-03",
+          "tripName": "Demo Trip 3",
+          "tripKey": "demo-03:seg-3",
+          "title": "Reykjavík → San Francisco",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-03-12T02:00:00Z",
+          "end": "2024-03-12T04:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-03",
+          "tripName": "Demo Trip 3",
+          "tripKey": "demo-03:seg-4",
+          "title": "San Francisco → London",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-03-12T12:00:00Z",
+          "end": "2024-03-12T16:00:00Z",
+          "segmentCount": 1
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-04",
+      "tripName": "Demo Trip 4",
+      "year": 2024,
+      "start": "2024-04-15T00:00:00Z",
+      "end": "2024-04-24T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-04",
+          "tripName": "Demo Trip 4",
+          "tripKey": "demo-04:seg-1",
+          "title": "London → Reykjavík",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-04-15T06:00:00Z",
+          "end": "2024-04-15T08:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-04",
+          "tripName": "Demo Trip 4",
+          "tripKey": "demo-04:seg-2",
+          "title": "Reykjavík → Lisbon",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-04-15T16:00:00Z",
+          "end": "2024-04-15T20:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-04",
+          "tripName": "Demo Trip 4",
+          "tripKey": "demo-04:hotel",
+          "title": "Hotel in Lisbon",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-04-16T00:00:00Z",
+          "end": "2024-04-23T00:00:00Z",
+          "segmentCount": 0
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "year": 2024,
+      "start": "2024-05-20T00:00:00Z",
+      "end": "2024-05-24T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-05",
+          "tripName": "Demo Trip 5",
+          "tripKey": "demo-05:seg-1",
+          "title": "London → Reykjavík",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-05-20T06:00:00Z",
+          "end": "2024-05-20T13:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-05",
+          "tripName": "Demo Trip 5",
+          "tripKey": "demo-05:seg-2",
+          "title": "Reykjavík → Berlin",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-05-20T16:00:00Z",
+          "end": "2024-05-21T00:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-05",
+          "tripName": "Demo Trip 5",
+          "tripKey": "demo-05:hotel",
+          "title": "Hotel in San Francisco",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-05-21T00:00:00Z",
+          "end": "2024-05-23T00:00:00Z",
+          "segmentCount": 0
+        },
+        {
+          "tripGroupKey": "demo-05",
+          "tripName": "Demo Trip 5",
+          "tripKey": "demo-05:seg-3",
+          "title": "Berlin → Taipei",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-05-21T02:00:00Z",
+          "end": "2024-05-21T07:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-05",
+          "tripName": "Demo Trip 5",
+          "tripKey": "demo-05:seg-4",
+          "title": "Taipei → San Francisco",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-05-21T12:00:00Z",
+          "end": "2024-05-21T16:00:00Z",
+          "segmentCount": 1
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-06",
+      "tripName": "Demo Trip 6",
+      "year": 2024,
+      "start": "2024-06-24T00:00:00Z",
+      "end": "2024-07-01T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-06",
+          "tripName": "Demo Trip 6",
+          "tripKey": "demo-06:seg-1",
+          "title": "Lisbon → Tokyo",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-06-24T06:00:00Z",
+          "end": "2024-06-24T12:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-06",
+          "tripName": "Demo Trip 6",
+          "tripKey": "demo-06:seg-2",
+          "title": "Tokyo → London",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-06-24T16:00:00Z",
+          "end": "2024-06-24T22:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-06",
+          "tripName": "Demo Trip 6",
+          "tripKey": "demo-06:hotel",
+          "title": "Hotel in London",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-06-25T00:00:00Z",
+          "end": "2024-06-30T00:00:00Z",
+          "segmentCount": 0
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-07",
+      "tripName": "Demo Trip 7",
+      "year": 2024,
+      "start": "2024-07-29T00:00:00Z",
+      "end": "2024-08-08T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-07",
+          "tripName": "Demo Trip 7",
+          "tripKey": "demo-07:seg-1",
+          "title": "San Francisco → Lisbon",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-07-29T06:00:00Z",
+          "end": "2024-07-29T12:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-07",
+          "tripName": "Demo Trip 7",
+          "tripKey": "demo-07:seg-2",
+          "title": "Lisbon → Reykjavík",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-07-29T16:00:00Z",
+          "end": "2024-07-29T19:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-07",
+          "tripName": "Demo Trip 7",
+          "tripKey": "demo-07:hotel",
+          "title": "Hotel in Berlin",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-07-30T00:00:00Z",
+          "end": "2024-08-07T00:00:00Z",
+          "segmentCount": 0
+        },
+        {
+          "tripGroupKey": "demo-07",
+          "tripName": "Demo Trip 7",
+          "tripKey": "demo-07:seg-3",
+          "title": "Reykjavík → Berlin",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-07-30T02:00:00Z",
+          "end": "2024-07-30T05:00:00Z",
+          "segmentCount": 1
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-08",
+      "tripName": "Demo Trip 8",
+      "year": 2024,
+      "start": "2024-09-02T00:00:00Z",
+      "end": "2024-09-12T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-08",
+          "tripName": "Demo Trip 8",
+          "tripKey": "demo-08:seg-1",
+          "title": "Berlin → Tokyo",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-09-02T06:00:00Z",
+          "end": "2024-09-02T10:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-08",
+          "tripName": "Demo Trip 8",
+          "tripKey": "demo-08:seg-2",
+          "title": "Tokyo → San Francisco",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-09-02T16:00:00Z",
+          "end": "2024-09-02T22:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-08",
+          "tripName": "Demo Trip 8",
+          "tripKey": "demo-08:hotel",
+          "title": "Hotel in Reykjavík",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-09-03T00:00:00Z",
+          "end": "2024-09-11T00:00:00Z",
+          "segmentCount": 0
+        },
+        {
+          "tripGroupKey": "demo-08",
+          "tripName": "Demo Trip 8",
+          "tripKey": "demo-08:seg-3",
+          "title": "San Francisco → Reykjavík",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-09-03T02:00:00Z",
+          "end": "2024-09-03T08:00:00Z",
+          "segmentCount": 1
+        }
+      ]
+    },
+    {
+      "tripGroupKey": "demo-09",
+      "tripName": "Demo Trip 9",
+      "year": 2024,
+      "start": "2024-10-07T00:00:00Z",
+      "end": "2024-10-17T00:00:00Z",
+      "events": [
+        {
+          "tripGroupKey": "demo-09",
+          "tripName": "Demo Trip 9",
+          "tripKey": "demo-09:seg-1",
+          "title": "London → Lisbon",
+          "type": "Flight",
+          "year": 2024,
+          "start": "2024-10-07T06:00:00Z",
+          "end": "2024-10-07T08:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-09",
+          "tripName": "Demo Trip 9",
+          "tripKey": "demo-09:seg-2",
+          "title": "Lisbon → Marrakesh",
+          "type": "Train",
+          "year": 2024,
+          "start": "2024-10-07T16:00:00Z",
+          "end": "2024-10-07T23:00:00Z",
+          "segmentCount": 1
+        },
+        {
+          "tripGroupKey": "demo-09",
+          "tripName": "Demo Trip 9",
+          "tripKey": "demo-09:hotel",
+          "title": "Hotel in Marrakesh",
+          "type": "Hotel",
+          "year": 2024,
+          "start": "2024-10-08T00:00:00Z",
+          "end": "2024-10-16T00:00:00Z",
+          "segmentCount": 0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "tripGroupKey": "demo-01",
+      "tripName": "Demo Trip 1",
+      "tripKey": "demo-01:seg-1",
+      "title": "Taipei → Tokyo",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-01-01T06:00:00Z",
+      "end": "2024-01-01T14:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-01",
+      "tripName": "Demo Trip 1",
+      "tripKey": "demo-01:seg-2",
+      "title": "Tokyo → Berlin",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-01-01T16:00:00Z",
+      "end": "2024-01-01T20:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-01",
+      "tripName": "Demo Trip 1",
+      "tripKey": "demo-01:hotel",
+      "title": "Hotel in Berlin",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-01-02T00:00:00Z",
+      "end": "2024-01-08T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-02",
+      "tripName": "Demo Trip 2",
+      "tripKey": "demo-02:seg-1",
+      "title": "Marrakesh → Berlin",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-02-05T06:00:00Z",
+      "end": "2024-02-05T11:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-02",
+      "tripName": "Demo Trip 2",
+      "tripKey": "demo-02:seg-2",
+      "title": "Berlin → Taipei",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-02-05T16:00:00Z",
+      "end": "2024-02-05T19:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-02",
+      "tripName": "Demo Trip 2",
+      "tripKey": "demo-02:hotel",
+      "title": "Hotel in Taipei",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-02-06T00:00:00Z",
+      "end": "2024-02-16T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "tripKey": "demo-03:seg-1",
+      "title": "Taipei → Berlin",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-03-11T06:00:00Z",
+      "end": "2024-03-11T12:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "tripKey": "demo-03:seg-2",
+      "title": "Berlin → Reykjavík",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-03-11T16:00:00Z",
+      "end": "2024-03-11T18:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "tripKey": "demo-03:hotel",
+      "title": "Hotel in London",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-03-12T00:00:00Z",
+      "end": "2024-03-14T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "tripKey": "demo-03:seg-3",
+      "title": "Reykjavík → San Francisco",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-03-12T02:00:00Z",
+      "end": "2024-03-12T04:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-03",
+      "tripName": "Demo Trip 3",
+      "tripKey": "demo-03:seg-4",
+      "title": "San Francisco → London",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-03-12T12:00:00Z",
+      "end": "2024-03-12T16:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-04",
+      "tripName": "Demo Trip 4",
+      "tripKey": "demo-04:seg-1",
+      "title": "London → Reykjavík",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-04-15T06:00:00Z",
+      "end": "2024-04-15T08:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-04",
+      "tripName": "Demo Trip 4",
+      "tripKey": "demo-04:seg-2",
+      "title": "Reykjavík → Lisbon",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-04-15T16:00:00Z",
+      "end": "2024-04-15T20:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-04",
+      "tripName": "Demo Trip 4",
+      "tripKey": "demo-04:hotel",
+      "title": "Hotel in Lisbon",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-04-16T00:00:00Z",
+      "end": "2024-04-23T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "tripKey": "demo-05:seg-1",
+      "title": "London → Reykjavík",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-05-20T06:00:00Z",
+      "end": "2024-05-20T13:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "tripKey": "demo-05:seg-2",
+      "title": "Reykjavík → Berlin",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-05-20T16:00:00Z",
+      "end": "2024-05-21T00:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "tripKey": "demo-05:hotel",
+      "title": "Hotel in San Francisco",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-05-21T00:00:00Z",
+      "end": "2024-05-23T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "tripKey": "demo-05:seg-3",
+      "title": "Berlin → Taipei",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-05-21T02:00:00Z",
+      "end": "2024-05-21T07:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-05",
+      "tripName": "Demo Trip 5",
+      "tripKey": "demo-05:seg-4",
+      "title": "Taipei → San Francisco",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-05-21T12:00:00Z",
+      "end": "2024-05-21T16:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-06",
+      "tripName": "Demo Trip 6",
+      "tripKey": "demo-06:seg-1",
+      "title": "Lisbon → Tokyo",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-06-24T06:00:00Z",
+      "end": "2024-06-24T12:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-06",
+      "tripName": "Demo Trip 6",
+      "tripKey": "demo-06:seg-2",
+      "title": "Tokyo → London",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-06-24T16:00:00Z",
+      "end": "2024-06-24T22:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-06",
+      "tripName": "Demo Trip 6",
+      "tripKey": "demo-06:hotel",
+      "title": "Hotel in London",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-06-25T00:00:00Z",
+      "end": "2024-06-30T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-07",
+      "tripName": "Demo Trip 7",
+      "tripKey": "demo-07:seg-1",
+      "title": "San Francisco → Lisbon",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-07-29T06:00:00Z",
+      "end": "2024-07-29T12:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-07",
+      "tripName": "Demo Trip 7",
+      "tripKey": "demo-07:seg-2",
+      "title": "Lisbon → Reykjavík",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-07-29T16:00:00Z",
+      "end": "2024-07-29T19:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-07",
+      "tripName": "Demo Trip 7",
+      "tripKey": "demo-07:hotel",
+      "title": "Hotel in Berlin",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-07-30T00:00:00Z",
+      "end": "2024-08-07T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-07",
+      "tripName": "Demo Trip 7",
+      "tripKey": "demo-07:seg-3",
+      "title": "Reykjavík → Berlin",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-07-30T02:00:00Z",
+      "end": "2024-07-30T05:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-08",
+      "tripName": "Demo Trip 8",
+      "tripKey": "demo-08:seg-1",
+      "title": "Berlin → Tokyo",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-09-02T06:00:00Z",
+      "end": "2024-09-02T10:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-08",
+      "tripName": "Demo Trip 8",
+      "tripKey": "demo-08:seg-2",
+      "title": "Tokyo → San Francisco",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-09-02T16:00:00Z",
+      "end": "2024-09-02T22:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-08",
+      "tripName": "Demo Trip 8",
+      "tripKey": "demo-08:hotel",
+      "title": "Hotel in Reykjavík",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-09-03T00:00:00Z",
+      "end": "2024-09-11T00:00:00Z",
+      "segmentCount": 0
+    },
+    {
+      "tripGroupKey": "demo-08",
+      "tripName": "Demo Trip 8",
+      "tripKey": "demo-08:seg-3",
+      "title": "San Francisco → Reykjavík",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-09-03T02:00:00Z",
+      "end": "2024-09-03T08:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-09",
+      "tripName": "Demo Trip 9",
+      "tripKey": "demo-09:seg-1",
+      "title": "London → Lisbon",
+      "type": "Flight",
+      "year": 2024,
+      "start": "2024-10-07T06:00:00Z",
+      "end": "2024-10-07T08:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-09",
+      "tripName": "Demo Trip 9",
+      "tripKey": "demo-09:seg-2",
+      "title": "Lisbon → Marrakesh",
+      "type": "Train",
+      "year": 2024,
+      "start": "2024-10-07T16:00:00Z",
+      "end": "2024-10-07T23:00:00Z",
+      "segmentCount": 1
+    },
+    {
+      "tripGroupKey": "demo-09",
+      "tripName": "Demo Trip 9",
+      "tripKey": "demo-09:hotel",
+      "title": "Hotel in Marrakesh",
+      "type": "Hotel",
+      "year": 2024,
+      "start": "2024-10-08T00:00:00Z",
+      "end": "2024-10-16T00:00:00Z",
+      "segmentCount": 0
+    }
+  ]
+}
