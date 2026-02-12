@@ -239,6 +239,8 @@ def collect_segments(raw_dir: Path, airport_index: Dict[str, Tuple[float, float,
             seg_count = 0
             start_dt: Optional[datetime] = None
             end_dt: Optional[datetime] = None
+            first_label: Optional[str] = None
+            last_label: Optional[str] = None
             title_guess: Optional[str] = None
 
             for leg in legs:
@@ -284,8 +286,9 @@ def collect_segments(raw_dir: Path, airport_index: Dict[str, Tuple[float, float,
                         # can't map it; skip
                         continue
 
-                    if not title_guess:
-                        title_guess = f"{dep_label} → {arr_label}"
+                    if first_label is None:
+                        first_label = str(dep_label)
+                    last_label = str(arr_label)
 
                     segments.append(SegmentRecord(
                         trip_group_key=trip_group_key,
@@ -301,6 +304,9 @@ def collect_segments(raw_dir: Path, airport_index: Dict[str, Tuple[float, float,
                         to_lat=float(arr_lat),
                         to_lon=float(arr_lon),
                     ))
+
+            if first_label and last_label:
+                title_guess = f"{first_label} → {last_label}"
 
             if seg_count > 0:
                 event_summaries.append({
