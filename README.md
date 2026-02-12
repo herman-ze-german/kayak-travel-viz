@@ -10,7 +10,7 @@ A tiny static site to visualize your Kayak trip-history export on an interactive
 
 After enabling Pages, the demo is available here:
 
-- `https://<org-or-user>.github.io/<repo>/`
+- https://herman-ze-german.github.io/kayak-travel-viz/
 
 ## Screenshot
 
