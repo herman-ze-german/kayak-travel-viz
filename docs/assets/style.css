@@ -18,3 +18,31 @@ aside h2 { margin:0 0 10px; font-size:14px; color:var(--muted); }
 .trip .meta { margin-top:6px; color:var(--muted); font-size:12px; line-height:1.35; }
 .trip .meta code { color:var(--text); }
 @media (max-width: 980px) { main { grid-template-columns: 1fr; } aside { height: 42vh; border-left:none; border-top:1px solid rgba(255,255,255,.08); } }
+
+/* Tiny credit bubble (optional; remove the <footer class="credit">… block from index.html to disable) */
+.credit{ position: fixed; left: 12px; bottom: 12px; z-index: 999; font-size: 12px; color: var(--muted); }
+.creditWrap{ position: relative; display: inline-flex; align-items: center; gap: 8px; }
+.creditInfo{
+  width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--muted);
+  text-decoration: none;
+  opacity: .65;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.creditInfo:hover, .creditWrap:focus-within .creditInfo{ opacity: .95; transform: translateY(-1px); }
+.creditBubble{
+  position: absolute; left: 0; bottom: 40px;
+  width: max-content; max-width: min(520px, calc(100vw - 24px));
+  padding: 10px 12px; border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(17,24,39,.92);
+  color: rgba(255,255,255,.88);
+  opacity: 0; transform: translateY(6px); pointer-events: none;
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+.creditWrap:hover .creditBubble, .creditWrap:focus-within .creditBubble{ opacity: 1; transform: translateY(0); pointer-events: auto; }
+.creditBubble a{ color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,.28); }
+.creditBubble a:hover{ border-bottom-color: rgba(255,255,255,.60); }

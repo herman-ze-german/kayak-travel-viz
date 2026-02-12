@@ -59,6 +59,14 @@ This project includes a small alias/patch system in `scripts/build.py` (e.g. `TX
 
 GitHub Pages will serve `docs/index.html`.
 
+## Credits bubble (optional)
+
+The UI includes a tiny “ⓘ” credit bubble in the bottom-left.
+
+To remove it entirely:
+- delete the `<footer class="credit" …>` block from `docs/index.html` (and `site/index.html` if you use `site/` directly)
+- optionally remove the `.credit*` CSS in `docs/assets/style.css`
+
 ## License
 
 MIT
