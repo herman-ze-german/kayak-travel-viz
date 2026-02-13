@@ -56,16 +56,18 @@ function featurePassesFilters(f, filters) {
   const p = f.properties || {};
   if (filters.year && String(p.year) !== String(filters.year)) return false;
   if (filters.type && String(p.type) !== String(filters.type)) return false;
+  if (filters.tripGroupKey && String(p.tripGroupKey) !== String(filters.tripGroupKey)) return false;
   return true;
 }
 
-function buildTripGroupCard(g) {
+function buildTripGroupCard(g, segmentsByTripKey, { onShowOnlyTrip, isSelectedTrip, openByDefault } = {}) {
   // g = {tripName, start, end, events:[...]}
   const wrap = document.createElement('div');
   wrap.className = 'trip';
 
   const details = document.createElement('details');
-  details.open = false;
+  details.dataset.tripgroupkey = String(g.tripGroupKey || '');
+  details.open = !!openByDefault;
 
   const summary = document.createElement('summary');
   summary.className = 'title';
@@ -76,19 +78,77 @@ function buildTripGroupCard(g) {
   const segs = (g.events || []).reduce((acc, e) => acc + (e.segmentCount || 0), 0);
   meta.innerHTML = `Items: <code>${(g.events||[]).length}</code> • Segments: <code>${segs}</code>`;
 
+  // Actions (show only this trip)
+  const actions = document.createElement('div');
+  actions.className = 'meta';
+  actions.style.marginTop = '6px';
+  actions.style.display = 'flex';
+  actions.style.gap = '8px';
+  actions.style.alignItems = 'center';
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = isSelectedTrip ? 'Show all' : 'Show only';
+  btn.style.cursor = 'pointer';
+  btn.style.border = '1px solid rgba(255,255,255,.14)';
+  btn.style.borderRadius = '999px';
+  btn.style.padding = '4px 10px';
+  btn.style.background = isSelectedTrip ? 'rgba(96,165,250,.18)' : 'rgba(17,24,39,.7)';
+  btn.style.color = 'var(--text)';
+  btn.style.fontSize = '12px';
+
+  btn.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    if (onShowOnlyTrip) onShowOnlyTrip(g);
+  });
+
+  actions.appendChild(btn);
+
   const list = document.createElement('div');
   list.className = 'meta';
   list.style.marginTop = '8px';
-  list.innerHTML = (g.events || []).map(e => {
+
+  const rows = (g.events || []).map(e => {
     const t = e.type || 'Other';
+    const tripKey = e.tripKey;
+    const segs = (tripKey && segmentsByTripKey && segmentsByTripKey[tripKey]) ? segmentsByTripKey[tripKey] : [];
+
+    const hasSub = (segs && segs.length > 1);
+    const title = e.title || '';
+
+    if (!hasSub) {
+      return `<div style="margin:6px 0; padding-left:8px; border-left:3px solid ${colorForType(t)}">
+        <div><code>${t}</code> — ${title}</div>
+        <div style="color: var(--muted)"> ${fmtDate(e.start)} → ${fmtDate(e.end)} • segments: ${e.segmentCount || 0}</div>
+      </div>`;
+    }
+
+    // Expandable sub-group for multi-segment items (most useful for flights)
+    const segLines = segs.map(s => {
+      const dep = fmtDate(s.departure);
+      const arr = fmtDate(s.arrival);
+      return `<div style="margin:4px 0; padding-left:10px; border-left:2px solid rgba(255,255,255,.12)">
+        <div>${s.fromLabel} → ${s.toLabel}</div>
+        <div style="color: var(--muted); font-size: 12px">${dep}${arr ? ` → ${arr}` : ''}</div>
+      </div>`;
+    }).join('');
+
     return `<div style="margin:6px 0; padding-left:8px; border-left:3px solid ${colorForType(t)}">
-      <div><code>${t}</code> — ${e.title || ''}</div>
+      <div><code>${t}</code> — ${title}</div>
       <div style="color: var(--muted)"> ${fmtDate(e.start)} → ${fmtDate(e.end)} • segments: ${e.segmentCount || 0}</div>
+      <details style="margin-top:6px;">
+        <summary style="cursor:pointer; color: var(--muted);">Show segments</summary>
+        <div style="margin-top:6px;">${segLines}</div>
+      </details>
     </div>`;
-  }).join('');
+  });
+
+  list.innerHTML = rows.join('');
 
   details.appendChild(summary);
   details.appendChild(meta);
+  details.appendChild(actions);
   details.appendChild(list);
   wrap.appendChild(details);
   return wrap;
@@ -111,10 +171,37 @@ function buildTripGroupCard(g) {
   const statsEl = document.getElementById('stats');
   const tripList = document.getElementById('tripList');
 
+  // Single-select “show only this trip” filter
+  let selectedTripGroupKey = '';
+  // Preserve which trip groups are expanded across renders
+  let openTripGroupKeys = new Set();
+
   const allYears = uniq(geo.features.map(f => f.properties && f.properties.year)).sort((a,b)=>a-b);
   const allTypes = uniq(geo.features.map(f => f.properties && f.properties.type)).sort();
   makeSelect(yearSelect, allYears, {labelAll:'All years'});
   makeSelect(typeSelect, allTypes, {labelAll:'All types'});
+
+  // Build an index: tripKey -> ordered list of line segments
+  const segmentsByTripKey = {};
+  for (const f of geo.features) {
+    if (!f || !f.geometry || f.geometry.type !== 'LineString') continue;
+    const p = f.properties || {};
+    const k = p.tripKey;
+    if (!k) continue;
+    if (!segmentsByTripKey[k]) segmentsByTripKey[k] = [];
+    segmentsByTripKey[k].push({
+      fromLabel: p.fromLabel,
+      toLabel: p.toLabel,
+      departure: p.departure,
+      arrival: p.arrival,
+      type: p.type,
+      year: p.year,
+      tripGroupKey: p.tripGroupKey
+    });
+  }
+  for (const k of Object.keys(segmentsByTripKey)) {
+    segmentsByTripKey[k].sort((a,b) => String(a.departure||'').localeCompare(String(b.departure||'')));
+  }
 
   const markers = L.markerClusterGroup({ maxClusterRadius: 40 });
   const linesLayer = L.layerGroup();
@@ -122,7 +209,17 @@ function buildTripGroupCard(g) {
   map.addLayer(markers);
 
   function render() {
-    const filters = { year: yearSelect.value, type: typeSelect.value };
+    const filters = { year: yearSelect.value, type: typeSelect.value, tripGroupKey: selectedTripGroupKey };
+
+    // Remember expanded trip groups before we nuke the DOM
+    try {
+      openTripGroupKeys = new Set(
+        Array.from(tripList.querySelectorAll('details[data-tripgroupkey]'))
+          .filter(d => d.open)
+          .map(d => d.dataset.tripgroupkey)
+          .filter(Boolean)
+      );
+    } catch {}
 
     linesLayer.clearLayers();
     markers.clearLayers();
@@ -174,15 +271,30 @@ function buildTripGroupCard(g) {
       .filter(g => (g.events || []).length > 0)
       .sort((a,b) => (a.start||'').localeCompare(b.start||''));
 
-    for (const g of tripGroups) tripList.appendChild(buildTripGroupCard(g));
+    for (const g of tripGroups) {
+      const isSelected = (selectedTripGroupKey && String(selectedTripGroupKey) === String(g.tripGroupKey));
+      const openByDefault = isSelected || openTripGroupKeys.has(String(g.tripGroupKey || ''));
+      tripList.appendChild(buildTripGroupCard(g, segmentsByTripKey, {
+        isSelectedTrip: isSelected,
+        openByDefault,
+        onShowOnlyTrip: (gg) => {
+          const k = String(gg.tripGroupKey || '');
+          selectedTripGroupKey = (String(selectedTripGroupKey) === k) ? '' : k;
+          // Keep this group open after toggling
+          if (k) openTripGroupKeys.add(k);
+          render();
+        }
+      }));
+    }
 
-    statsEl.textContent = `Trips: ${tripGroups.length} • Segments: ${visibleSegments} • Data files: ${summary.sourceFiles}`;
+    const tripNote = selectedTripGroupKey ? ' • Filter: 1 trip' : '';
+    statsEl.textContent = `Trips: ${tripGroups.length} • Segments: ${visibleSegments} • Data files: ${summary.sourceFiles}${tripNote}`;
   }
 
   yearSelect.addEventListener('change', render);
   typeSelect.addEventListener('change', render);
   if (colorSelect) colorSelect.addEventListener('change', render);
-  resetBtn.addEventListener('click', () => { yearSelect.value=''; typeSelect.value=''; if (colorSelect) colorSelect.value='type'; render(); });
+  resetBtn.addEventListener('click', () => { yearSelect.value=''; typeSelect.value=''; selectedTripGroupKey=''; if (colorSelect) colorSelect.value='type'; render(); });
 
   render();
 })();
